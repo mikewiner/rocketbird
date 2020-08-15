@@ -18,20 +18,20 @@ gradient.addColorStop('0.6', '#000')
 gradient.addColorStop('0.9', '#fff')
 
 const background = new Image();
-background.src = './images/star-bg.png';
+background.src = './images/background.png';
 const BG = {
     x1: 0,
     x2: canvas.width,
     y: 0,
-    width: canvas.width,
+    width: canvas.width+2,
     height: canvas.height
 }   
 
 function handleBackground(){
-    if (BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
+    if (BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width-5;
     else BG.x1 -= gameSpeed;
     //console.log ('hi')
-    if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
+    if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width-5;
     else BG.x2 -= gameSpeed;
     ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height)
     ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height)
@@ -95,9 +95,9 @@ function handleCollisions(){
             bird.y + bird.height < canvas.height))){
             //collision
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
-                ctx.font = '25px Georgia';
+                ctx.font = '20px Georgia';
                 ctx.fillStyle = 'white';
-                ctx.fillText('Game Over you SUCK! Your score is ' + score, 70, canvas.height/2 - 0);
+                ctx.fillText('Game Over you just shit all over yourself! Your score is ' + score, 30, canvas.height/2 - 0);
                 return true;
             }
     }
