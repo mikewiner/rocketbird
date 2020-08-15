@@ -161,3 +161,24 @@ table, tr, td {
   border-collapse: collapse;
   border-bottom: 1px solid #f5f5f5d5;;
 }
+
+#submit-h1 {
+  color: rgb(255, 134, 21);  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.go-back-button {
+  background-color: rgb(255, 134, 21);  
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 5px;
+
+}
