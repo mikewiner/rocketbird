@@ -44,8 +44,8 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     handleBackground();
-    
     handleObstacles();
+    
     bird.update();
     bird.draw();
     handleParticles();
