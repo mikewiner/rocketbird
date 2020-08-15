@@ -37,7 +37,7 @@ li{
 .open-button, #myBtn {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: rgb(255, 134, 21);
-  border-radius: 1rem;
+  border-radius: 5px;
   color: white;
   padding: 16px 20px;
   border: none;
