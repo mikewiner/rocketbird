@@ -44,10 +44,11 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     handleBackground();
-    handleParticles();
+    
     handleObstacles();
     bird.update();
     bird.draw();
+    handleParticles();
     
     ctx.fillStyle = gradient;
     ctx.font= '90px Georgia'
