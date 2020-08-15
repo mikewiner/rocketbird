@@ -121,6 +121,7 @@ function sendScore() {
 }
   
 function closeSendScore() {
+    document.getElementById("sform").reset();
     document.getElementById("scoreForm").style.display = "none";
 }
 

@@ -34,12 +34,12 @@
 
     <!-- Form for sending score (later can be changed to submit modal) -->
     <div class="form-popup" id="scoreForm">
-        <form action="https://secure-dawn-20819.herokuapp.com/submitascore" method="POST" class="form-container">
+        <form id="sform" action="https://secure-dawn-20819.herokuapp.com/submitascore" method="POST" class="form-container">
           <h1>Submit Score</h1>
           <h1 id='scoreDisplay'></h1>
 
           <label for="name"><b>Name</b></label>
-          <input type="text" placeholder="Your name" name="name" required maxlength="25">
+          <input type="text" placeholder="Your awesome name!" name="name" required maxlength="25">
 
           <!-- <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Enter Email" name="email" required> -->
