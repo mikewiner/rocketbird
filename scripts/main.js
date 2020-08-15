@@ -17,13 +17,33 @@ gradient.addColorStop('0.55', '#4040ff')
 gradient.addColorStop('0.6', '#000')
 gradient.addColorStop('0.9', '#fff')
 
+const background = new Image();
+background.src = './images/star-bg.png';
+const BG = {
+    x1: 0,
+    x2: canvas.width,
+    y: 0,
+    width: canvas.width,
+    height: canvas.height
+}   
+
+function handleBackground(){
+    if (BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
+    else BG.x1 -= gameSpeed;
+    //console.log ('hi')
+    if(BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
+    else BG.x2 -= gameSpeed;
+    ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height)
+    ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height)
+}
 
 
 temp = canvas.height - 60;
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    //ctx.fillRect(10,temp,50,50)
+
+    handleBackground();
     handleParticles();
     handleObstacles();
     bird.update();
@@ -36,7 +56,14 @@ function animate() {
     
     handleCollisions();
 
-    if(handleCollisions()) return;
+    if(handleCollisions()){
+        //openForm();
+        document.getElementById("scoreDisplay").innerHTML = score;
+        document.getElementById("score").value = score;
+        console.log(score)
+
+        return;
+    }
 
     requestAnimationFrame(animate);
     angle+= 0.12;
@@ -57,6 +84,7 @@ window.addEventListener('keyup', e => {
     if(e.code === 'Space') spacePressed = false;
 })
 
+
 const bang = new Image();
 bang.src = './images/bang.png'
 function handleCollisions(){
@@ -68,9 +96,89 @@ function handleCollisions(){
             //collision
                 ctx.drawImage(bang, bird.x, bird.y, 50, 50);
                 ctx.font = '25px Georgia';
-                ctx.fillStyle = 'black';
+                ctx.fillStyle = 'white';
                 ctx.fillText('Game Over you SUCK! Your score is ' + score, 70, canvas.height/2 - 0);
                 return true;
             }
     }
+}
+
+
+
+// Form Javascript
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+  
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+function sendScore() {
+    document.getElementById("scoreForm").style.display = "block";
+}
+  
+function closeSendScore() {
+    document.getElementById("scoreForm").style.display = "none";
+}
+
+var modal = document.getElementById("myModal");
+
+
+//Modal Javascript
+// Get the button that opens the modal 
+
+fetch('http://localhost:3000/scores2')
+  .then(response => response.json())
+  .then(highScores => {
+      console.log(highScores)
+      for(i=0; i<highScores.length; i++){
+
+        let tableRef = document.getElementById('high-score-table');
+        // Insert a row at the end of the table
+        let newRow = tableRef.insertRow(-1);
+        // Insert a cell in the row at index 0
+        let newScore = newRow.insertCell(0);
+        let newName = newRow.insertCell(1);
+
+        // Append a text node to the cell
+        let newScoreText = document.createTextNode(highScores[i].score);
+        let newNameText = document.createTextNode(highScores[i].name);
+        newScore.appendChild(newScoreText);
+        newName.appendChild(newNameText);
+        
+      }
+
+    })
+  .catch(error => {
+      hsError = error;  
+      console.error('Error:', error);
+    });
+
+
+const submitScore = () => {
+
+}
+
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

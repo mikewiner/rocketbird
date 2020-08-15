@@ -3,11 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flappy Shits</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
+<!-- <button id="myBtn">See highscores</button> -->
+
+
+
 <body>
+    
+    <!-- signup form -->
+    <!-- <div class="form-popup" id="myForm">
+        <form action="http://localhost:3000/signup" method="POST" class="form-container">
+          <h1>Sign Up</h1>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required>
+
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter Username" name="name" required>
+      
+          <button type="submit" class="btn">Login</button>
+          <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div> -->
+
+    <!-- Form for sending score (later can be changed to submit modal) -->
+    <div class="form-popup" id="scoreForm">
+        <form action="http://localhost:3000/submitascore" method="POST" class="form-container">
+          <h1>Submit Score</h1>
+          <h1 id='scoreDisplay'></h1>
+
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Your name" name="name" required maxlength="25">
+
+          <!-- <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required> -->
+      
+          <input class='no-show' type="text" name="score" id="score" value="value" />
+         
+          <button type="submit" class="btn">Send Score</button>
+          <button type="submit" class="btn cancel" onclick="closeSendScore()">Close</button>
+        </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>The highscores are ... </p>
+        <table id='high-score-table' style="width:100%">
+          <tr>
+            <th style="width:50%">Score</th>
+            <th style="width:50%">Name</th>
+          </tr>
+
+        </table>
+
+        <ul id="high-score-list">
+        <!-- List Items go here -->
+        </ul>
+        
+      </div>
+
+    </div>
+
+
+
+    <!-- The game -->
     <canvas id="canvas1"></canvas>
+    
+    
+    
+    <div class='buttons'>
+        <button id="myBtn">See High Scores</button>
+        <!-- <button class="open-button" onclick="openForm()">Register</button> -->
+        <button class="open-button" onclick="sendScore()">Submit Score</button>
+    </div>
+
+    <iframe class='no-show' name="frame"></iframe>
 
     <script src='scripts/bird.js'></script>
     <script src="scripts/particles.js"></script>
