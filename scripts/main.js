@@ -85,6 +85,16 @@ window.addEventListener('keyup', e => {
     if(e.code === 'Space') spacePressed = false;
 })
 
+window.ontouchstart = () => {
+    spacePressed = true;
+    console.log("touched")
+} 
+
+window.ontouchend = () => {
+    spacePressed = false;
+    console.log("untouched")
+} 
+
 
 const bang = new Image();
 bang.src = './images/bang.png'
