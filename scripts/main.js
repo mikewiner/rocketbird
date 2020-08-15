@@ -72,12 +72,6 @@ function animate() {
     
 }
 
-function restart() {
-    ctx.stop();
-    ctx.clear();
-    animate();
-}
-
 animate();
 
 window.addEventListener('keydown', e => {
@@ -135,7 +129,7 @@ var modal = document.getElementById("myModal");
 //Modal Javascript
 // Get the button that opens the modal 
 
-fetch('http://localhost:3000/scores2')
+fetch('https://secure-dawn-20819.herokuapp.com/scores2')
   .then(response => response.json())
   .then(highScores => {
       console.log(highScores)
