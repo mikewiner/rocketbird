@@ -126,16 +126,19 @@ li{
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  /* background-color: #fefefe; */
+  color:#f5f5f5d5;
+  background-color: rgb(255, 134, 21);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border-radius: 5px;
+  /* border: 1px solid #888; */
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: #fff;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -156,5 +159,5 @@ li{
 table, tr, td {
   border-spacing: 15px;
   border-collapse: collapse;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #f5f5f5d5;;
 }

@@ -72,6 +72,12 @@ function animate() {
     
 }
 
+function restart() {
+    ctx.stop();
+    ctx.clear();
+    animate();
+}
+
 animate();
 
 window.addEventListener('keydown', e => {
