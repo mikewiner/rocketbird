@@ -36,7 +36,7 @@ li{
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button, #myBtn {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: rgb(255, 134, 21);
+  background-color:#be1e2d;
   border-radius: 5px;
   color: white;
   padding: 16px 20px;
@@ -128,7 +128,7 @@ li{
 .modal-content {
   /* background-color: #fefefe; */
   color:#f5f5f5d5;
-  background-color: rgb(255, 134, 21);
+  background-color: #be1e2d;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border-radius: 5px;
@@ -163,7 +163,7 @@ table, tr, td {
 }
 
 #submit-h1 {
-  color: rgb(255, 134, 21);  
+  color: #be1e2d;  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,7 +171,7 @@ table, tr, td {
 }
 
 .go-back-button {
-  background-color: rgb(255, 134, 21);  
+  background-color: #be1e2d;  
   color: white;
   position: absolute;
   top: 70%;
@@ -184,7 +184,7 @@ table, tr, td {
 }
 
 .controls-h2 {
-  color: rgb(255, 134, 21);  
+  color: #be1e2d;  
   position: absolute;
   top: 88%;
   left: 50%;

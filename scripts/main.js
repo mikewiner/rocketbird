@@ -43,12 +43,14 @@ temp = canvas.height - 60;
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    
     handleBackground();
+    handleParticles();
     handleObstacles();
     
     bird.update();
     bird.draw();
-    handleParticles();
+    
     
     ctx.fillStyle = gradient;
     ctx.font= '90px Georgia'
@@ -105,10 +107,10 @@ function handleCollisions(){
             ((bird.y < 0 + obstaclesArray[i].top && bird.y + bird.height > 0 || bird.y > canvas.height - obstaclesArray[i].bottom &&
             bird.y + bird.height < canvas.height))){
             //collision
-                ctx.drawImage(bang, bird.x, bird.y, 50, 50);
+                ctx.drawImage(bang, bird.x+50, bird.y, 50, 50);
                 ctx.font = '20px Georgia';
                 ctx.fillStyle = 'white';
-                ctx.fillText('Game Over you just shit all over yourself! Your score is ' + score, 30, canvas.height/2 - 0);
+                ctx.fillText('Game Over, you crashed! Your score is ' + score, 30, canvas.height/2 - 0);
                 return true;
             }
     }

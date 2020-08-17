@@ -6,8 +6,8 @@ class Particle {
         this.y = bird.y+6;
         this.size = Math.random() * 7 + 3;
         this.speedY = (Math.random() * 1) - 0.5;
-        //this.color = 'hsla(' + hue + ', 100%, 50%, 0.8)';
-        this.color = "#654321"
+        this.color = 'hsla(' + hue + ', 100%, 50%, 0.8)';
+        //this.color = "#654321"
     }
     update() {
         this.x -= gameSpeed;

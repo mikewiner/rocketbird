@@ -1,14 +1,14 @@
 const sprite = new Image();
-sprite.src = './images/bart-vector-nobg.png'
+sprite.src = './images/michael-rocket-big.png'
 class Bird {
     constructor(){
         this.x = 150;
         this.y = 100;
         this.vy = 0;
-        this.originalWidth = 331;
-        this.originalHeight = 217;
-        this.width = this.originalWidth/7;
-        this.height = this.originalHeight/7;
+        this.originalWidth = 997;
+        this.originalHeight = 539;
+        this.width = this.originalWidth/15;
+        this.height = this.originalHeight/15;
         this.weight = 1;
     }
     update(){
@@ -34,8 +34,8 @@ class Bird {
     }
     draw() {
         ctx.fillStyle = 'red';
-        //ctx.fillRect(this.x, this.y, this.width, this.height);
-        ctx.drawImage(sprite, 0,0, this.originalWidth, this.originalHeight, this.x-20, this.y-7, this.width*1.7, this.height*1.7)
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.drawImage(sprite, 0,0, this.originalWidth, this.originalHeight, this.x-20, this.y-10, this.width*1.6, this.height*1.6)
         //ctx.fillRect(30, 30, 60, 60);
     }
     flap() {
